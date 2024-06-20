@@ -32,6 +32,8 @@ function Section() {
     navigate(`/preview/${name}`);
   };
 
+  const uniqueRegions = [...new Set(countries.map((country) => country.region))];
+
   const filteredData = countries.filter((country) => {
     return (
       country.name.toLowerCase().includes(inputValue) &&
@@ -66,17 +68,19 @@ function Section() {
           </button>
           {isOpen && (
             <div className="bg-gray-100 absolute top-14 flex flex-col items-start rounded-lg p-2 w-full dark:bg-gray-600">
-              {countryData.map((item, i) => (
-                <div
-                  key={i}
-                  onClick={() => handleRegionClick(item.region)}
-                  className="flex w-full justify-between p-2 hover:bg-gray-200 cursor-pointer 
-                  rounded-r-lg border-r-transparent hover:border-l-white dark:hover:bg-gray-400"
-                >
-                  <h3 className="font-bold">{item.region}</h3>
-                </div>
-              ))}
-            </div>
+            {uniqueRegions.map((region, i) => (
+              <div
+                key={i}
+                className="flex w-full justify-between p-0 hover:bg-gray-200 cursor-pointer rounded-r-lg border-r-transparent hover:border-l-white dark:hover:bg-gray-400"
+                onClick={() => {
+                  setSelectedRegion(region);
+                  setIsOpen(false);
+                }}
+              >
+                <h3 className="font-bold">{region}</h3>
+              </div>
+            ))}
+          </div>
           )}
         </div>
       </div>
