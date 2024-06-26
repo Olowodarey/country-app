@@ -42,8 +42,8 @@ function Section() {
   });
 
   return (
-    <div className="">
-      <div className="container mx-auto flex flex-wrap justify-between items-center gap-10">
+    <div className="sm:h-screen sm:items-center sm:justify-center px-8  pt-20 lg:h-screen w-full ">
+      <div className=" flex flex-wrap justify-between items-center gap-10">
         <div className="relative flex items-center w-full sm:w-auto">
           <MagnifyingGlassIcon className="h-4 w-4 absolute left-3 text-gray-400" />
           <input
@@ -85,18 +85,18 @@ function Section() {
         </div>
       </div>
 
-      <div className="flex flex-wrap justify-center gap-10 pt-10">
+      <div className="flex flex-wrap gap-12 pt-10 justify-center">
         {filteredData.map((country, index) => (
           <div
             key={index}
-            className="bg-gray-200 w-[300px] h-[350px] sm:w-1/2 lg:w-1/5 dark:bg-gray-500"
+            className="bg-gray-200 w-[300px] h-[350px] sm:w-[80%] lg:w-1/6 dark:bg-gray-500"
             onClick={() => handleImageClick(country.name)}
           >
             <div className="">
               <img
                 src={country.flag}
                 alt={country.name}
-                className="w-full h-[200px] object-cover"
+                className="w-full h-[150px] object-cover"
               />
             </div>
             <div className="pt-5 pl-5">
@@ -107,8 +107,7 @@ function Section() {
               <p className="font-bold">Region: {country.region}</p>
               <p className="font-bold">Capital: {country.capital}</p>
             </div>
-          </div>
-        ))}
+          </div>    ))}
       </div>
     </div>
   );

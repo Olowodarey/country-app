@@ -12,7 +12,7 @@ function Preview() {
   }
 
   return (
-    <div className="container   mx-auto pt-10 px-4">
+    <div className="container   mx-auto pt-20 px-4">
       <div className="mb-10">
         <button
           onClick={() => navigate(-1)}
@@ -40,17 +40,17 @@ function Preview() {
             <p className="font-bold">Capital: {country.capital}</p>
 
             <div className="pt-10">
-            <p className="font-bold">Border Countries: {country.borders.join(", ")}</p>
+            {/* <p className="font-bold">Border Countries: {country.borders.join(", ")}</p> */}
             </div>
           </div>
           <div className="flex-1">
             <p className="font-bold">Top Level Domain: {country.topLevelDomain}</p>
-            <p className="font-bold">
+            {/* <p className="font-bold">
               Currency: {country.currencies.map(currency => `${currency.name} (${currency.symbol})`).join(", ")}
             </p>
             <p className="font-bold">
               Languages: {country.languages.map(language => `${language.name} (${language.nativeName})`).join(", ")}
-            </p>
+            </p> */}
 
           
            
