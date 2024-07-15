@@ -15,7 +15,7 @@ function Navbar() {
             className="flex items-center bg-gray-300 hover:bg-blue-700 py-1 px-2 rounded-2xl"
           >
             <MoonIcon className="h-4 w-6" />
-            <span className="ml-2">{darkMode ? "Light" : "Dark"} Mode</span>
+            <span className="ml-2 px-2">{darkMode ? "Light" : "Dark"} Mode</span>
           </button>
         </div>
       </div>
